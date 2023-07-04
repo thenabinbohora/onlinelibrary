@@ -255,6 +255,7 @@ button:active {
 
 .highlight__wrapper {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .highlight {
@@ -282,6 +283,7 @@ button:active {
 .highlight__subtitle {
     font-size: 20px;
     margin-bottom: 12px;
+    text-align: center;
 }
 
 .highlight__para {
@@ -307,7 +309,7 @@ button:active {
 }
 
 .book__img {
-  max-height: 350px;
+  max-height: 380px;
   transition: all 300ms ease;
   cursor: no-drop;
 }
@@ -384,6 +386,32 @@ footer {
   padding: 0 8px;
 }
 
+/* Responsive */
+
+@media (max-width:768px) {
+  .header__description {
+    padding: 0 24px;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  button {
+    font-size: 18px;
+  }
+
+  .book {
+    width: 50%;
+  }
+
+
+}
+
 @media (max-width:550px) {
   .nav__links {
     display: none;
@@ -391,5 +419,13 @@ footer {
 
   .btn__menu {
     display: block;
+  }
+
+  .highlight {
+    width: 100%;
+  }
+
+  .highlight:not(:last-child) {
+    margin-bottom: 24px;
   }
 }
