@@ -12,6 +12,10 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 h1 {
   font-size: 56px;
   text-align: center;
@@ -31,6 +35,11 @@ p {
 
 a {
   text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 li {
@@ -43,6 +52,7 @@ li {
 
 .text-color {
   background: -webkit-linear-gradient(120deg, #3c819a, #9a3c81);
+  background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -53,6 +63,10 @@ img {
 
 button {
     cursor: pointer;
+}
+
+.no-cursor {
+  cursor: no-drop;
 }
 
 /* Navigation */
@@ -95,6 +109,65 @@ ul {
 .nav__link--primary {
   border: 2px solid #06283d;
   border-radius: 4px;
+}
+
+.btn__menu {
+  background-color: transparent;
+  color: #06283d;
+  font-size: 40px;
+  border: none;
+  text-align: center;
+  display: none;
+}
+
+.menu__backdrop {
+  position: absolute;
+  background-color: #dff6ff;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 300ms ease;
+}
+
+.menu__links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu--open .menu__backdrop {
+  visibility: visible;
+  opacity: 1;
+}
+
+.menu--open {
+  max-height: 100vh;
+  overflow-y: hidden;
+}
+
+.menu__list {
+  padding: 32px 0;
+}
+
+.menu__link {
+  font-size: 32px;
+  font-weight: bold;
+  color: #06283d;
+}
+
+.btn__menu--close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  padding: 8px;
+  color: #06283d;
 }
 
 /* Landing Page */
@@ -269,4 +342,54 @@ button:active {
   text-decoration: line-through;
   padding-right: 4px;
   color: #bfbfbf;
+}
+
+/* Explore */
+
+#explore {
+  background-color: #dff6ff;
+}
+
+.row__column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Footer */
+
+footer {
+  background-color: #06283d;
+}
+
+.footer__logo {
+  display: flex;
+}
+
+.footer__logo--img {
+  width: 160px;
+  filter: invert();
+}
+
+.footer__link,
+.footer__copyright {
+  color: #fff;
+}
+
+.footer__list {
+  margin: 20px 0 24px 0;
+} 
+
+.footer__link {
+  padding: 0 8px;
+}
+
+@media (max-width:550px) {
+  .nav__links {
+    display: none;
+  }
+
+  .btn__menu {
+    display: block;
+  }
 }
