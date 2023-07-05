@@ -102,7 +102,7 @@ ul {
   font-weight: bold;
 }
 
-.nav__link:hover:not(.nav__link--primary) {
+.nav__link:not(.nav__link--primary):hover {
   text-decoration: underline;
 }
 
